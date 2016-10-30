@@ -1,3 +1,4 @@
+# ReviewsController
 class ReviewsController < ApplicationController
   before_action :set_movie
 
@@ -13,7 +14,7 @@ class ReviewsController < ApplicationController
     @review = @movie.reviews.new(review_params)
     if @review.save
       redirect_to movie_reviews_path(@movie),
-        notice: "Thanks for your review!"
+                  notice: 'Thanks for your review!'
     else
       render :new
     end
@@ -22,10 +23,10 @@ class ReviewsController < ApplicationController
   def destroy
     @review = @movie.reviews.find(params[:id])
     @review.destroy
-    redirect_to movie_reviews_path(@movie), notice: "Review successfully deleted!"
+    redirect_to movie_reviews_path(@movie), notice: 'successfully deleted!'
   end
 
-private
+  private
 
   def review_params
     params.require(:review).permit(:name, :comment, :stars)
@@ -34,5 +35,4 @@ private
   def set_movie
     @movie = Movie.find(params[:movie_id])
   end
-
 end
