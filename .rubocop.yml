@@ -1,0 +1,13 @@
+AllCops:
+  TargetRubyVersion: 2.2
+  Include:
+    - '.'
+  Exclude:
+    - 'spec/support/**/*'
+    - 'spec/spec_helper.rb'
+    - 'spec/rails_helper.rb'
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'bin/spring'
+    - 'Rakefile'
+    - 'vendor/bundle/**/*'
