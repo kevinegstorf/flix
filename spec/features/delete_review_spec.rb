@@ -15,7 +15,7 @@ describe 'Deleting a review' do
 
     expect(current_path).to eq(movie_reviews_path(movie))
 
-    expect(page).to have_text('Review successfully deleted!')
+    expect(page).to have_text('successfully deleted!')
     expect(page).not_to have_text(review1.name)
   end
 end
